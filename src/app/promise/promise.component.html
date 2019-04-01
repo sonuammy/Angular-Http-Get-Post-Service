@@ -1,0 +1,21 @@
+<h3>Book Details with Promise </h3>
+<ul>
+  <li *ngFor="let book of books" >
+    Id: {{book.id}}, Name: {{book.name}}
+  </li>
+</ul>
+<div>
+  <div>
+     <label>Id: </label>
+     <input [(ngModel)]="book.id" />
+  </div>
+  <div>
+     <label>Name: </label>
+     <input [(ngModel)]="book.name" />
+  </div>
+  <div>
+     <button (click)="addBook()">Add</button>
+  </div>
+</div> 
+<div *ngIf="bookName" [ngClass] = "'success'"> {{bookName}} Added. </div>
+<div *ngIf="errorMessage" [ngClass] = "'error'"> {{errorMessage}} </div> 
