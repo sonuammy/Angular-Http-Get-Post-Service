@@ -22,7 +22,7 @@ export class BookService {
     }
     addBookWithObservable(book:Book): Observable<Book> {
 	let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({ headers: headers });
         return this.http.post(this.url, book, options)
                   //.map(this.extractData)
                    .map(res => res.json())
@@ -36,7 +36,7 @@ export class BookService {
     }
     addBookWithPromise(book:Book): Promise<Book> {
 	let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
+    let options = new RequestOptions({ headers: headers });
         return this.http.post(this.url, book, options).toPromise()
             //.then(this.extractData)
 	           .then(res => res.json())
